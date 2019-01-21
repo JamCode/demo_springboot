@@ -25,3 +25,5 @@
 /.nb-gradle/
 *.swp
 ./logs/
+
+*.log
