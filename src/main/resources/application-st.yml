@@ -1,0 +1,23 @@
+server:
+  port: 8888
+app:
+  mysql:
+    name: 'test'
+  redis:
+    name: 'testxxx'
+  oracle: 'oracle_test'
+
+
+logging:
+  path: './logs'
+  level:
+    com.wanghan.demo: info
+
+
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://172.19.222.43:3306/openser?useSSL=false
+      username: openser
+      password: zh_ytx
+      driver-class-name: com.mysql.jdbc.Driver

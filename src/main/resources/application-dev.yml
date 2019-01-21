@@ -1,0 +1,41 @@
+server:
+  port: 8887
+app:
+  mysql:
+    name: 'dev'
+  redis:
+    name: 'xxx'
+  oracle: 'oracle_dev'
+
+
+logging:
+  path: './logs'
+  level:
+    com.wanghan.demo: debug
+
+
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://172.19.222.43:3306/openser?useSSL=false
+      username: openser
+      password: zh_ytx
+      driver-class-name: com.mysql.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
+      initialSize: 1
+      maxActive: 20
+      maxWait: 10000 #配置获取连接等待超时的时间
+      timeBetweenEvictionRunsMillis: 60000 #配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      #申请连接时执行validationQuery检测连接是否有效
+      testOnBorrow: false
+      #归还连接时执行validationQuery检测连接是否有效
+      testOnReturn: false
+      poolPreparedStatements: true
+      #慢日志监控
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      useGlobalDataSourceStat: true
+      filters: stat,config,wall
