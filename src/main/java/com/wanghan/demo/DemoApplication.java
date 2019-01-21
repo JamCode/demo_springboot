@@ -26,7 +26,7 @@ public class DemoApplication {
 		springApplication.addListeners(new ApplicationPreparedEventListener());
 		springApplication.addListeners(new ApplicationReadyEventListener());
 
-		//ApplicationContext ctx = springApplication.run(args);
+		springApplication.run(args);
 		//System.out.println(ctx.getBean(UserMapper.class));
 
 

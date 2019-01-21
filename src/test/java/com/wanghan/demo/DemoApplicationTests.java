@@ -50,16 +50,14 @@ public class DemoApplicationTests {
 	@Before
 	public void setUp() throws Exception {
 		mvc = MockMvcBuilders.webAppContextSetup(wc).build();
+
 	}
 
 	@Test
 	public void getHello() throws Exception {
-
-
 		MvcResult result = (MvcResult) mvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON)).andReturn();
 		Assert.assertEquals(result.getResponse().getStatus(), 200);
 		Assert.assertEquals(result.getResponse().getContentAsString(), "Hello World112221");
-
 	}
 
 	@Autowired
