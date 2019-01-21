@@ -56,6 +56,7 @@
     <appender name="druid-queue" class="ch.qos.logback.classic.AsyncAppender">
         <queueSize>512</queueSize>
         <appender-ref ref="druid"/>
+        <includeCallerData>true</includeCallerData>
     </appender>
 
 

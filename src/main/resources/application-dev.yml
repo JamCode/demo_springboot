@@ -11,7 +11,8 @@ app:
 logging:
   path: './logs'
   level:
-    com.wanghan.demo: debug
+    com.wanghan.demo: info
+    druid.sql.DataSource: debug
 
 
 spring:
@@ -38,4 +39,4 @@ spring:
       #慢日志监控
       connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
       useGlobalDataSourceStat: true
-      filters: stat,config,wall
+      filters: stat,config,wall,slf4j
