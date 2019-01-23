@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd} %d{HH:mm:ss.SSS} [%-5level] [%thread] %logger{36} %F.%L - %msg%n" />
+    <property scope="context" name="LOG_PATTERN" value="%d{yyyy-MM-dd} %d{HH:mm:ss.SSS} [%-5level] [%X{MS_CORRELATTION_ID}] [%thread] %logger{36} %F.%L - %msg%n" />
 
     <!--输出到控制台-->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
@@ -70,6 +70,11 @@
         <appender-ref ref="druid-queue"/>
     </logger>
 
+
+    <logger name="RestGatewayLogger">
+        <level value="info"/>
+        <appender-ref ref="appLoggerAsync"/>
+    </logger>
 
     <root level="info">
         <appender-ref ref="console" />
