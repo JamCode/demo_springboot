@@ -41,7 +41,7 @@ public class DemoApplicationTests {
 	private MockMvc mvc;
 
 	@Autowired
-	private WebApplicationContext wc;
+	private HelloController helloController;
 
 
 	@Autowired
@@ -49,7 +49,7 @@ public class DemoApplicationTests {
 
 	@Before
 	public void setUp() throws Exception {
-		mvc = MockMvcBuilders.webAppContextSetup(wc).build();
+		mvc = MockMvcBuilders.standaloneSetup(helloController).build();
 
 	}
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <property scope="context" name="LOG_PATTERN" value="%d{yyyy-MM-dd} %d{HH:mm:ss.SSS} [%-5level] [%X{MS_CORRELATTION_ID}] [%thread] %logger{36} %F.%L - %msg%n" />
+    <property scope="context" name="LOG_PATTERN" value="%d{yyyy-MM-dd} %d{HH:mm:ss.SSS} [%-5level] [%X{MS_CORRELATION_ID}] [%thread] %logger{36} %F.%L - %msg%n" />
 
     <!--输出到控制台-->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
@@ -33,6 +33,8 @@
 
         <appender-ref ref ="appLogger"/>
     </appender>
+
+
 
     <logger name="com.wanghan.demo">
         <level value="info"></level>
